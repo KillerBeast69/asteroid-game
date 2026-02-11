@@ -46,6 +46,12 @@ def main():
                 log_event("player_hit")
                 print("Game over!")
                 sys.exit()
+        for ast in asteroids_group:
+            for shot in shots_group:
+                if ast.collides_with(shot):
+                    log_event("asteroid_shot")
+                    ast.kill()
+                    shot.kill()
 
 
 if __name__ == "__main__":
